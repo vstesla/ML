@@ -50,6 +50,8 @@ for i, img_path in enumerate(next_rock + next_paper + next_scissors):
     plt.axis('Off')
     plt.show()
 
+#Constructing DNN by tf
+
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
@@ -111,8 +113,9 @@ model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['ac
 
 history = model.fit_generator(train_generator, epochs=25, validation_data=validation_generator, verbose=1)
 
-model.save("rps.h5")
+model.save("rps.h5")#Save the training data in .h5 file.
 
+#Analyze the result.
 
 import matplotlib.pyplot as plt
 from keras.models import load_model
